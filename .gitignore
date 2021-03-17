@@ -1,0 +1,6 @@
+/env/
+/Kivy_catalog/
+/data/*
+!/data/screens/
+
+requirements.txt
