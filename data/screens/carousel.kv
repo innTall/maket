@@ -1,0 +1,54 @@
+<ColoredLabel@Label>:
+  font_size: '48sp'
+  color: (.1, .8, .4, 1)
+  canvas.before:
+    Color:
+      rgb: (.4, .2, .6)
+    Rectangle:
+      pos: self.x + sp(2), self.y + sp(2)
+      size: self.width - sp(5), self.height - sp(5)
+
+ShowcaseScreen:
+  name: 'Carousel'
+  fullscreen: True
+
+  BoxLayout:
+    size_hint_y: None
+    height: '48dp'
+
+    ToggleButton:
+      text: 'Press - blue - cicle'
+      id: btnloop
+
+    Label:
+      size_hint_x: None
+      width: self.height
+      text: '{}'.format(carousel.index)
+
+    Button:
+      size_hint_x: None
+      width: self.height
+      text: 'Prev'
+      on_release: carousel.load_previous()
+
+    Button:
+      size_hint_x: None
+      width: self.height
+      text: 'Next'
+      on_release: carousel.load_next()
+
+  Carousel:
+    id: carousel
+    loop: btnloop.state == 'down'
+
+    ColoredLabel:
+      text: 'Chart D1'
+
+    ColoredLabel:
+      text: 'Chart 4H'
+
+    ColoredLabel:
+      text: 'Chart 1H'
+
+    ColoredLabel:
+      text: 'Chart m15'

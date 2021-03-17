@@ -1,6 +1,7 @@
 from autobahn.twisted.websocket import WebSocketServerProtocol
 from binance.client import Client
 from binance.websockets import BinanceSocketManager
+from binance.enums import *
 
 client = Client()
 bm = BinanceSocketManager(client)
