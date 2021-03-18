@@ -5,14 +5,17 @@ from kivy.lang import Builder
 from kivy.properties import NumericProperty, StringProperty, BooleanProperty, ListProperty
 from kivy.clock import Clock
 from kivy.animation import Animation
+from kivy.uix.boxlayout import BoxLayout
+from kivy.uix.label import Label
+from kivy.uix.image import Image
 from kivy.uix.screenmanager import Screen
 
-class ShowcaseScreen(Screen):
+class BoxLayout(BoxLayout):
   pass
-  
 class MaketApp(App):
   def build(self):
-    self.title = 'maket'
-    
+    return BoxLayout()
+
 if __name__ == '__main__':
-  MaketApp().run()
+  app = MaketApp()
+  app.run()
